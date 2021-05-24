@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MainActivity"
+    android:id="@+id/splash_scre"
+    android:background="@drawable/splash_scre">
+
+    <ImageView
+        android:id="@+id/logo_1_1"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="71dp"
+        android:background="@drawable/logo_1_1"
+        android:src="@drawable/logosplash"
+        />
+
+    <TextView
+        android:id="@+id/ayenosis"
+        android:layout_width="205dp"
+        android:layout_height="69dp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="402dp"
+        android:text="@string/ayenosis"
+        android:textAppearance="@style/ayenosis"
+        android:gravity="center_horizontal|top"
+        />
+
+</RelativeLayout>
