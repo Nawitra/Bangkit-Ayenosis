@@ -10,4 +10,18 @@
     <string name="choose_register">Register</string>
     <string name="punya">Already have an account?</string>
     <string name="choose_login">Login now!</string>
+    <string name="intro_title">Welcome to Ayenosis</string>
+    <string name="intro_descTitle1">Quick Fix</string>
+    <string name="intro_descLine1">Stay healthy.</string>
+    <string name="intro_descLine2">Get a quick check up of your eyes.</string>
+    <string name="next_screen">Next</string>
+    <string name="intro_title2">An eye diagnosis app</string>
+    <string name="intro_descTitle2">Portable Report</string>
+    <string name="intro2_descLine1">Is mobility a concern?</string>
+    <string name="intro2_descLine2">Worry not. Your diagnosis is in your hand.</string>
+    <string name="last_screen">START NOW</string>
+    <string name="intro_title3">Made for you</string>
+    <string name="intro_descTitle3">Know-how</string>
+    <string name="intro3_descLine1">Learn various diseases,</string>
+    <string name="intro3_descLine2">This is the window of knowledge.</string>
 </resources>
