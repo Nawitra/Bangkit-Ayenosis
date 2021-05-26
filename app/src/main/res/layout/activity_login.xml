@@ -1,111 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_login"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/activity_login"
     android:background="#FFFFFF">
 
     <TextView
         android:id="@+id/ayenosis"
         android:layout_width="184dp"
         android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="26dp"
-        android:text="@string/ayenosis"
-        android:textAppearance="@style/ayenosis1"
-        android:textAlignment="center"
+        android:fontFamily="@font/reemkufi_regular"
         android:gravity="center_horizontal"
-        />
+        android:text="@string/ayenosis"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="40sp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/logo_2"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="75dp"
-        android:src="@drawable/logoawal"
-        android:background="@drawable/logo_2"
-        />
+        app:srcCompat="@drawable/logoawal" />
 
     <View
         android:id="@+id/rectangle_4"
         android:layout_width="281dp"
         android:layout_height="210dp"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="310dp"
-        android:background="@drawable/rect_login"
-        />
+        android:background="@drawable/rect_login" />
 
     <EditText
         android:id="@+id/et_email_li"
         android:layout_width="220dp"
         android:layout_height="37dp"
-        android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="330dp"
         android:background="@color/white"
-        android:inputType="textEmailAddress"
+        android:fontFamily="@font/reemkufi_regular"
         android:hint="@string/email_login"
-        android:textSize="18sp"
+        android:inputType="textEmailAddress"
         android:padding="5dp"
-        />
+        android:textColorHint="@color/grey"
+        android:textSize="18sp" />
 
     <EditText
         android:id="@+id/et_password_li"
         android:layout_width="220dp"
         android:layout_height="37dp"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="384dp"
         android:background="@color/white"
-        android:inputType="textPassword"
+        android:fontFamily="@font/reemkufi_regular"
         android:hint="@string/password_login"
+        android:inputType="textPassword"
         android:padding="5dp"
-        android:textSize="18sp"
-        android:layout_centerHorizontal="true"
-        />
+        android:textColorHint="@color/grey"
+        android:textSize="18sp" />
 
     <Button
         android:id="@+id/login_btn"
         android:layout_width="220dp"
-        android:layout_height="37dp"
+        android:layout_height="45dp"
         android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="450dp"
-        android:background="@color/grey"
-        android:textSize="20sp"
-        android:textColor="@color/black"
+        android:backgroundTint="@color/grey"
+        android:fontFamily="@font/reemkufi_regular"
+        android:gravity="center_horizontal"
         android:text="@string/login_button_string"
-        android:layout_centerHorizontal="true"
         android:textAlignment="center"
-        android:gravity="center_horizontal"
-        />
-    
-    <TextView
-        android:id="@+id/text_untuk"
-        android:layout_width="176dp"
-        android:layout_height="39dp"
-        android:layout_centerHorizontal="true"
-        android:textAlignment="center"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="550dp"
-        android:text="@string/tidakpunya"
-        android:textAppearance="@style/don_t_have_"
-        />
+        android:textColor="@color/black"
+        android:textSize="20sp" />
 
     <TextView
-        android:id="@+id/kesignup"
+        android:id="@+id/tvRegister_text"
         android:layout_width="176dp"
-        android:layout_height="39dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:textAlignment="center"
+        android:layout_marginTop="550dp"
         android:gravity="center_horizontal"
-        android:layout_marginTop="600dp"
+        android:text="@string/no_account"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tvRegister"
+        android:layout_width="176dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="580dp"
+        android:gravity="center_horizontal"
         android:text="@string/choose_register"
-        android:textAppearance="@style/kesignup"
-        />
+        android:textAlignment="center"
+        android:textColor="@color/redirect" />
 
 </RelativeLayout>

@@ -91,17 +91,17 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/guideline_hor1"
-        app:srcCompat="@drawable/logoawal" />
+        app:srcCompat="@drawable/logointro" />
 
     <ImageView
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="170dp"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/guideline_hor2"
-        app:layout_constraintVertical_bias="3.6"
         app:srcCompat="@drawable/ic_wave1" />
 
     <ImageView
@@ -155,7 +155,7 @@
         app:layout_constraintTop_toBottomOf="@id/intro_desc1" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/button2"
+        android:id="@+id/button1"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"

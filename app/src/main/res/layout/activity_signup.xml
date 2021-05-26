@@ -1,153 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_signup"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/activity_signup"
-    android:background="#FFFFFF">
+    android:background="#FFFFFF"
+    android:fillViewport="true"
+    android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/ayenosis"
-        android:layout_width="184dp"
-        android:layout_height="60dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="26dp"
-        android:text="@string/ayenosis"
-        android:textAppearance="@style/ayenosis1"
-        android:textAlignment="center"
-        android:gravity="center_horizontal"
-        />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_ver1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
 
-    <ImageView
-        android:id="@+id/logo_2"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="75dp"
-        android:src="@drawable/logoawal"
-        android:background="@drawable/logo_2"
-        />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_ver2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3" />
 
-    <View
-        android:id="@+id/rectangle_4"
-        android:layout_width="281dp"
-        android:layout_height="350dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="310dp"
-        android:background="@drawable/rectangle_4"
-        />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_ver3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
 
-    <EditText
-        android:id="@+id/et_email_su"
-        android:layout_width="220dp"
-        android:layout_height="37dp"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="330dp"
-        android:background="@color/white"
-        android:inputType="textEmailAddress"
-        android:hint="@string/email_login"
-        android:textSize="18sp"
-        android:padding="5dp"
-        />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_ver4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7" />
 
-    <EditText
-        android:id="@+id/et_password_su"
-        android:layout_width="220dp"
-        android:layout_height="37dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="384dp"
-        android:background="@color/white"
-        android:inputType="textPassword"
-        android:hint="@string/password_login"
-        android:padding="5dp"
-        android:textSize="18sp"
-        android:layout_centerHorizontal="true"
-        />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_ver5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
 
-    <EditText
-        android:id="@+id/et_uname_su"
-        android:layout_width="220dp"
-        android:layout_height="37dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="438dp"
-        android:background="@color/white"
-        android:inputType="text"
-        android:hint="@string/username"
-        android:padding="5dp"
-        android:textSize="18sp"
-        android:layout_centerHorizontal="true"
-        />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_hor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="110dp" />
 
-    <EditText
-        android:id="@+id/et_age_su"
-        android:layout_width="220dp"
-        android:layout_height="37dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="494dp"
-        android:background="@color/white"
-        android:inputType="text|number"
-        android:hint="@string/age"
-        android:padding="5dp"
-        android:textSize="18sp"
-        android:layout_centerHorizontal="true"
-        />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_hor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="439dp" />
 
-    <EditText
-        android:id="@+id/et_jns_su"
-        android:layout_width="220dp"
-        android:layout_height="37dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="545dp"
-        android:background="@color/white"
-        android:inputType="text"
-        android:hint="@string/gender"
-        android:padding="5dp"
-        android:textSize="18sp"
-        android:layout_centerHorizontal="true"
-        />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_hor21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.73" />
 
-    <Button
-        android:id="@+id/sign_btn"
-        android:layout_width="220dp"
-        android:layout_height="37dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="600dp"
-        android:background="@color/grey"
-        android:textColor="@color/white"
-        android:text="@string/choose_register"
-        android:layout_centerHorizontal="true"
-        android:textAlignment="center"
-        android:gravity="center_horizontal"
-        />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_hor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="622dp" />
 
-    <TextView
-        android:id="@+id/text_untuk"
-        android:layout_width="200dp"
-        android:layout_height="39dp"
-        android:layout_centerHorizontal="true"
-        android:textAlignment="center"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="665dp"
-        android:text="@string/punya"
-        android:textAppearance="@style/don_t_have_"
-        />
+        <ImageView
+            android:id="@+id/ivRegister"
+            android:layout_width="200dp"
+            android:layout_height="180dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRegister"
+            app:srcCompat="@drawable/logoawal" />
 
-    <TextView
-        android:id="@+id/kesignup"
-        android:layout_width="176dp"
-        android:layout_height="39dp"
-        android:layout_centerHorizontal="true"
-        android:textAlignment="center"
-        android:gravity="center_horizontal"
-        android:layout_marginTop="695dp"
-        android:text="@string/choose_login"
-        android:textAppearance="@style/kesignup"
-        />
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/reemkufi_regular"
+            android:gravity="center_horizontal"
+            android:text="@string/ayenosis"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
+        <View
+            android:id="@+id/rectangle_4"
+            android:layout_width="281dp"
+            android:layout_height="360dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/rectangle_4"
+            app:layout_constraintEnd_toEndOf="@id/guideline_ver5"
+            app:layout_constraintStart_toStartOf="@id/guideline_ver1"
+            app:layout_constraintTop_toBottomOf="@id/ivRegister" />
 
-</RelativeLayout>
+        <EditText
+            android:id="@+id/et_email_su"
+            android:layout_width="220dp"
+            android:layout_height="37dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:fontFamily="@font/reemkufi_regular"
+            android:hint="@string/email_login"
+            android:inputType="textEmailAddress"
+            android:padding="0dp"
+            android:textColorHint="@color/grey"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/rectangle_4" />
+
+        <EditText
+            android:id="@+id/et_password_su"
+            android:layout_width="220dp"
+            android:layout_height="37dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:fontFamily="@font/reemkufi_regular"
+            android:hint="@string/password_login"
+            android:inputType="textPassword"
+            android:padding="5dp"
+            android:textColorHint="@color/grey"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_email_su" />
+
+        <EditText
+            android:id="@+id/et_uname_su"
+            android:layout_width="220dp"
+            android:layout_height="37dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:fontFamily="@font/reemkufi_regular"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:padding="5dp"
+            android:textColorHint="@color/grey"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_password_su" />
+
+        <EditText
+            android:id="@+id/et_age_su"
+            android:layout_width="220dp"
+            android:layout_height="37dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:fontFamily="@font/reemkufi_regular"
+            android:hint="@string/age"
+            android:inputType="text|number"
+            android:padding="5dp"
+            android:textColorHint="@color/grey"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_uname_su" />
+
+        <EditText
+            android:id="@+id/et_jns_su"
+            android:layout_width="220dp"
+            android:layout_height="37dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:fontFamily="@font/reemkufi_regular"
+            android:hint="@string/gender"
+            android:inputType="text"
+            android:padding="5dp"
+            android:textColorHint="@color/grey"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_age_su" />
+
+        <Button
+            android:id="@+id/sign_btn"
+            android:layout_width="220dp"
+            android:layout_height="37dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/grey"
+            android:fontFamily="@font/reemkufi_regular"
+            android:text="@string/choose_register"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_jns_su" />
+
+        <TextView
+            android:id="@+id/tvLogin_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/reemkufi_regular"
+            android:gravity="center"
+            android:text="@string/punya"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rectangle_4" />
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="176dp"
+            android:layout_height="39dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:text="@string/choose_login"
+            android:textAlignment="center"
+            android:textColor="#0645ad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLogin_text" />
+</androidx.constraintlayout.widget.ConstraintLayout>

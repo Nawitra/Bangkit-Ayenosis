@@ -1,4 +1,4 @@
-package com.wp.ayenosis
+package com.wp.ayenosis.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

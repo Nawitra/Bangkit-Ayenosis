@@ -17,11 +17,16 @@
     <string name="next_screen">Next</string>
     <string name="intro_title2">An eye diagnosis app</string>
     <string name="intro_descTitle2">Portable Report</string>
-    <string name="intro2_descLine1">Is mobility a concern?</string>
-    <string name="intro2_descLine2">Worry not. Your diagnosis is in your hand.</string>
+    <string name="intro2_descLine1">Mobility; a concern no more.</string>
+    <string name="intro2_descLine2">The diagnosis is in your pocket.</string>
     <string name="last_screen">START NOW</string>
     <string name="intro_title3">Made for you</string>
     <string name="intro_descTitle3">Know-how</string>
     <string name="intro3_descLine1">Learn various diseases,</string>
     <string name="intro3_descLine2">This is the window of knowledge.</string>
+    <string name="title_activity_onboarding">OnboardingActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="login_button_string">LOGIN</string>
+    <string name="no_account">Don\'t have an account?</string>
 </resources>
