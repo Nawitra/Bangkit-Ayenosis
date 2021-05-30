@@ -70,7 +70,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        val user = FirebaseUtils.firebaseUser
+        val user = firebaseUser
         user?.let {
             val mIntent = Intent(this@LoginActivity, MainActivity::class.java)
             startActivity(mIntent)

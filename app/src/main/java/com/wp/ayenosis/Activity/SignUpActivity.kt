@@ -39,17 +39,7 @@ class SignUpActivity : AppCompatActivity() {
 
             if (checkValidity()) {
                 createAccount()
-                storeData()
             }
-        }
-    }
-
-    override fun onStart() {
-        super.onStart()
-        val user = firebaseUser
-        user?.let {
-            val mIntent = Intent(this@SignUpActivity, MainActivity::class.java)
-            startActivity(mIntent)
         }
     }
 
@@ -63,6 +53,7 @@ class SignUpActivity : AppCompatActivity() {
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
             spinner.adapter = adapter
         }
+        spinner.setSelection(0)
     }
 
     private fun checkEmpty(): Boolean =
@@ -83,8 +74,7 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun checkValidity(): Boolean {
-
-        if(!checkEmpty()) {
+        if (!checkEmpty()) {
             Toast.makeText(
                 this,
                 "There is still at least an empty field", Toast.LENGTH_SHORT
@@ -93,7 +83,7 @@ class SignUpActivity : AppCompatActivity() {
             return false
         }
 
-        if(!checkEmailValidity()) {
+        if (!checkEmailValidity()) {
             Toast.makeText(
                 this,
                 "Inputted email is not valid", Toast.LENGTH_SHORT
@@ -102,7 +92,7 @@ class SignUpActivity : AppCompatActivity() {
             return false
         }
 
-        if(!checkPasswordValidity()) {
+        if (!checkPasswordValidity()) {
             Toast.makeText(
                 this,
                 "Password should be around 8 - 16 in length", Toast.LENGTH_SHORT
@@ -115,13 +105,21 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun createAccount() {
+        val userData = User(
+            binding.etUnameSu.text.toString(),
+            Integer.parseInt(binding.etAgeSu.text.toString()),
+            spinner.selectedItem.toString()
+        )
+
         firebaseAuth.createUserWithEmailAndPassword(userEmail, userPassword)
+
+        db.collection("users").document().set(userData)
             .addOnCompleteListener { task ->
                 if (task.isSuccessful) {
-                    Toast.makeText(
-                        this, "Account has been created.",
-                        Toast.LENGTH_SHORT
-                    ).show()
+                    Toast.makeText(this, "Account created!", Toast.LENGTH_SHORT).show()
+                    val mIntent = Intent(this@SignUpActivity, MainActivity::class.java)
+                    startActivity(mIntent)
+                    finish()
                 } else {
                     Toast.makeText(
                         this, "An error has occurred",
@@ -131,16 +129,14 @@ class SignUpActivity : AppCompatActivity() {
             }
     }
 
-    private fun storeData() {
-        val userData = User(
-            binding.etUnameSu.text.toString().trim(),
-            Integer.parseInt(binding.etAgeSu.text.toString()),
-            spinner.selectedItem.toString()
-        )
 
-        firebaseUser?.uid?.let { db.collection("users").document(it).set(userData) }
-        val mIntent = Intent(this@SignUpActivity, MainActivity::class.java)
-        startActivity(mIntent)
-        finish()
+    override fun onStart() {
+        super.onStart()
+        val user = firebaseUser
+        user?.let {
+            val mIntent = Intent(this@SignUpActivity, MainActivity::class.java)
+            startActivity(mIntent)
+        }
     }
+
 }
