@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_signup"
@@ -8,6 +8,10 @@
     android:background="#FFFFFF"
     android:fillViewport="true"
     android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@id/guideline_ver1"
@@ -119,6 +123,7 @@
             android:hint="@string/email_login"
             android:inputType="textEmailAddress"
             android:padding="0dp"
+            android:textColor="@color/black"
             android:textColorHint="@color/grey"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -137,6 +142,7 @@
             android:hint="@string/password_login"
             android:inputType="textPassword"
             android:padding="5dp"
+            android:textColor="@color/black"
             android:textColorHint="@color/grey"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -155,6 +161,7 @@
             android:hint="@string/username"
             android:inputType="text"
             android:padding="5dp"
+            android:textColor="@color/black"
             android:textColorHint="@color/grey"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -165,6 +172,7 @@
             android:id="@+id/et_age_su"
             android:layout_width="220dp"
             android:layout_height="37dp"
+            android:maxLength="2"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
@@ -173,14 +181,15 @@
             android:hint="@string/age"
             android:inputType="text|number"
             android:padding="5dp"
+            android:textColor="@color/black"
             android:textColorHint="@color/grey"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_uname_su" />
 
-        <EditText
-            android:id="@+id/et_jns_su"
+        <Spinner
+            android:id="@+id/sp_jns_su"
             android:layout_width="220dp"
             android:layout_height="37dp"
             android:layout_alignParentTop="true"
@@ -188,17 +197,14 @@
             android:layout_marginTop="20dp"
             android:background="@color/white"
             android:fontFamily="@font/reemkufi_regular"
-            android:hint="@string/gender"
-            android:inputType="text"
-            android:padding="5dp"
-            android:textColorHint="@color/grey"
-            android:textSize="18sp"
+            android:popupBackground="@color/white"
+            android:theme="@style/spinnerStyle"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/et_age_su" />
 
         <Button
-            android:id="@+id/sign_btn"
+            android:id="@+id/btnRegister"
             android:layout_width="220dp"
             android:layout_height="37dp"
             android:layout_alignParentTop="true"
@@ -211,7 +217,7 @@
             android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/et_jns_su" />
+            app:layout_constraintTop_toBottomOf="@id/sp_jns_su" />
 
         <TextView
             android:id="@+id/tvLogin_text"
@@ -240,4 +246,5 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvLogin_text" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

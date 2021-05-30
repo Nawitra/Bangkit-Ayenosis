@@ -1,4 +1,9 @@
 <resources>
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
     <string name="app_name">Ayenosis</string>
     <string name="splash_screen_subtitle">Ayenosis</string>
     <string name="ayenosis">Ayenosis</string>

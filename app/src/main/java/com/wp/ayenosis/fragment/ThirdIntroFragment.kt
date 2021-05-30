@@ -9,6 +9,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.wp.ayenosis.activity.LoginActivity
 import com.wp.ayenosis.activity.SignUpActivity
 import com.wp.ayenosis.databinding.FragmentIntro3Binding
 
@@ -28,7 +29,7 @@ class ThirdIntroFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.button3.setOnClickListener {
-            val mIntent = Intent(requireContext(), SignUpActivity::class.java)
+            val mIntent = Intent(requireContext(), LoginActivity::class.java)
             startActivity(mIntent)
         }
     }

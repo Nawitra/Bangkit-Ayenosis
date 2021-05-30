@@ -20,7 +20,7 @@ class OnboardingActivity : AppCompatActivity() {
             "onboarding_complete", Context.MODE_PRIVATE)
 
         if(sharedPref.getBoolean("onboarding_complete", false)) {
-            val mIntent = Intent(this@OnboardingActivity, SignUpActivity::class.java)
+            val mIntent = Intent(this@OnboardingActivity, LoginActivity::class.java)
             startActivity(mIntent)
             finish()
         } else {
