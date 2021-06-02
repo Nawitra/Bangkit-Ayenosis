@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/btn_history"
+        android:title="History"
+        android:icon="@drawable/button_history"></item>
+
+    <item
+        android:id="@+id/btn_home"
+        android:title="Home"
+        android:icon="@drawable/button_home"></item>
+
+    <item
+        android:id="@+id/btn_question"
+        android:title="FAQ"
+        android:icon="@drawable/button_question"></item>
+</menu>

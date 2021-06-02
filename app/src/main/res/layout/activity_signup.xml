@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_signup"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:fillViewport="true"
+    android:orientation="vertical">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_ver1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.1" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_ver2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.3" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_ver3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.5" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_ver4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.7" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_ver5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.9" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_hor1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="110dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_hor2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="439dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_hor21"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent="0.73" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@id/guideline_hor3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_begin="622dp" />
+
+        <ImageView
+            android:id="@+id/ivRegister"
+            android:layout_width="200dp"
+            android:layout_height="180dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRegister"
+            app:srcCompat="@drawable/logoawal" />
+
+        <TextView
+            android:id="@+id/tvRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/reemkufi_regular"
+            android:gravity="center_horizontal"
+            android:text="@string/ayenosis"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/rectangle_4"
+            android:layout_width="281dp"
+            android:layout_height="360dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/rectangle_4"
+            app:layout_constraintEnd_toEndOf="@id/guideline_ver5"
+            app:layout_constraintStart_toStartOf="@id/guideline_ver1"
+            app:layout_constraintTop_toBottomOf="@id/ivRegister" />
+
+        <EditText
+            android:id="@+id/et_email_su"
+            android:layout_width="220dp"
+            android:layout_height="37dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:fontFamily="@font/reemkufi_regular"
+            android:hint="@string/email_login"
+            android:inputType="textEmailAddress"
+            android:padding="0dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/rectangle_4" />
+
+        <EditText
+            android:id="@+id/et_password_su"
+            android:layout_width="220dp"
+            android:layout_height="37dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:fontFamily="@font/reemkufi_regular"
+            android:hint="@string/password_login"
+            android:inputType="textPassword"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_email_su" />
+
+        <EditText
+            android:id="@+id/et_uname_su"
+            android:layout_width="220dp"
+            android:layout_height="37dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:fontFamily="@font/reemkufi_regular"
+            android:hint="@string/username"
+            android:inputType="text"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_password_su" />
+
+        <EditText
+            android:id="@+id/et_age_su"
+            android:layout_width="220dp"
+            android:layout_height="37dp"
+            android:maxLength="2"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:fontFamily="@font/reemkufi_regular"
+            android:hint="@string/age"
+            android:inputType="text|number"
+            android:padding="5dp"
+            android:textColor="@color/black"
+            android:textColorHint="@color/grey"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_uname_su" />
+
+        <Spinner
+            android:id="@+id/sp_jns_su"
+            android:layout_width="220dp"
+            android:layout_height="37dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:fontFamily="@font/reemkufi_regular"
+            android:popupBackground="@color/white"
+            android:theme="@style/spinnerStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/et_age_su" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="220dp"
+            android:layout_height="37dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/grey"
+            android:fontFamily="@font/reemkufi_regular"
+            android:text="@string/choose_register"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/sp_jns_su" />
+
+        <TextView
+            android:id="@+id/tvLogin_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="14dp"
+            android:fontFamily="@font/reemkufi_regular"
+            android:gravity="center"
+            android:text="@string/punya"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/rectangle_4" />
+
+        <TextView
+            android:id="@+id/tvLogin"
+            android:layout_width="176dp"
+            android:layout_height="39dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="13dp"
+            android:text="@string/choose_login"
+            android:textAlignment="center"
+            android:textColor="#0645ad"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvLogin_text" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "686873528773",
+    "project_id": "quick-wall-314917",
+    "storage_bucket": "quick-wall-314917.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:686873528773:android:2040bb7d1105909614a3ac",
+        "android_client_info": {
+          "package_name": "com.wp.ayenosis"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "686873528773-70j74ee5jipq980r3fu6mhqaqm8u80f9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCxHHyLPwGZAVleN1uVSK8QXy6KUvSPynY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "686873528773-70j74ee5jipq980r3fu6mhqaqm8u80f9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

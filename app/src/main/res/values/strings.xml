@@ -1,0 +1,40 @@
+<resources>
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+    </string-array>
+
+    <string name="app_name">Ayenosis</string>
+    <string name="splash_screen_subtitle">Ayenosis</string>
+    <string name="ayenosis">Ayenosis</string>
+    <string name="email_login">Email</string>
+    <string name="password_login">Password</string>
+    <string name="username">Username</string>
+    <string name="age">Age</string>
+    <string name="gender">Gender</string>
+    <string name="choose_register">Register</string>
+    <string name="punya">Already have an account?</string>
+    <string name="choose_login">Login now!</string>
+    <string name="intro_title">Welcome to Ayenosis</string>
+    <string name="intro_descTitle1">Quick Fix</string>
+    <string name="intro_descLine1">Stay healthy.</string>
+    <string name="intro_descLine2">Get a quick check up of your eyes.</string>
+    <string name="next_screen">Next</string>
+    <string name="intro_title2">An eye diagnosis app</string>
+    <string name="intro_descTitle2">Portable Report</string>
+    <string name="intro2_descLine1">Mobility; a concern no more.</string>
+    <string name="intro2_descLine2">The diagnosis is in your pocket.</string>
+    <string name="last_screen">START NOW</string>
+    <string name="intro_title3">Made for you</string>
+    <string name="intro_descTitle3">Know-how</string>
+    <string name="intro3_descLine1">Learn various diseases,</string>
+    <string name="intro3_descLine2">This is the window of knowledge.</string>
+    <string name="title_activity_onboarding">OnboardingActivity</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="login_button_string">LOGIN</string>
+    <string name="no_account">Don\'t have an account?</string>
+    <string name="upload_from_file">Upload From File</string>
+    <string name="take_from_camera">Take From Camera</string>
+    <string name="upload_image">Upload Image</string>
+</resources>
