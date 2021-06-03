@@ -87,7 +87,7 @@ class ChooseUploadActivity : AppCompatActivity() {
             val outputs = model.process(inputFeature0)
             val outputFeature0 = outputs.outputFeature0AsTensorBuffer
             val tvPrediction: TextView = findViewById(R.id.tv_prediction)
-            tvPrediction.text = outputFeature0.toString()
+            //tvPrediction.text = outputFeature0.toString()
 
             model.close()
         }
