@@ -56,15 +56,15 @@ class ChooseUploadActivity : AppCompatActivity() {
             val byteBuffer = ByteBuffer.allocateDirect(4 * 3 * 192 * 256)
             for (y in 0 until 256) {
                 for (x in 0 until 192) {
-                    val px = bitmap.getPixel(x, y)
+                    val px = bitmapScaled.getPixel(x, y)
 
                     val r = Color.red(px)
                     val g = Color.green(px)
                     val b = Color.blue(px)
 
-                    val rf = (r - 127) / 255f
-                    val gf = (g - 127) / 255f
-                    val bf = (b - 127) / 255f
+                    val rf = (r) / 255f
+                    val gf = (g) / 255f
+                    val bf = (b) / 255f
 
                     byteBuffer.putFloat(rf)
                     byteBuffer.putFloat(gf)
@@ -77,17 +77,14 @@ class ChooseUploadActivity : AppCompatActivity() {
             val model = Model1.newInstance(this)
 
             // Creates inputs for reference.
-            val inputFeature0 = TensorBuffer.createFixedSize(
-                intArrayOf(1, 192, 256, 3),
-                DataType.FLOAT32
-            )
+            val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 192, 256, 3),DataType.FLOAT32)
             inputFeature0.loadBuffer(byteBuffer)
 
             // Runs model inference and gets result.
             val outputs = model.process(inputFeature0)
             val outputFeature0 = outputs.outputFeature0AsTensorBuffer
             val tvPrediction: TextView = findViewById(R.id.tv_prediction)
-            //tvPrediction.text = outputFeature0.toString()
+            tvPrediction.text = outputFeature0.toString()
 
             model.close()
         }
