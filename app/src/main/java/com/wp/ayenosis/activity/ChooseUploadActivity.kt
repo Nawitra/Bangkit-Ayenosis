@@ -19,7 +19,6 @@ import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
-import java.nio.ByteOrder
 
 class ChooseUploadActivity : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
@@ -54,7 +53,7 @@ class ChooseUploadActivity : AppCompatActivity() {
         btnSubmit.setOnClickListener{
 
             val bitmapScaled = Bitmap.createScaledBitmap(bitmap, 192, 256, true)
-            val byteBuffer = ByteBuffer.allocateDirect(192*256*3*4).order(ByteOrder.nativeOrder())
+            val byteBuffer = ByteBuffer.allocateDirect(4 * 3 * 192 * 256)
             for (y in 0 until 256) {
                 for (x in 0 until 192) {
                     val px = bitmap.getPixel(x, y)
@@ -73,18 +72,22 @@ class ChooseUploadActivity : AppCompatActivity() {
                 }
             }
 
+            val tensorImage = TensorImage(DataType.FLOAT32)
             TensorImage.fromBitmap(bitmapScaled)
             val model = Model1.newInstance(this)
 
             // Creates inputs for reference.
-            val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 192, 256, 3), DataType.FLOAT32)
+            val inputFeature0 = TensorBuffer.createFixedSize(
+                intArrayOf(1, 192, 256, 3),
+                DataType.FLOAT32
+            )
             inputFeature0.loadBuffer(byteBuffer)
 
             // Runs model inference and gets result.
             val outputs = model.process(inputFeature0)
             val outputFeature0 = outputs.outputFeature0AsTensorBuffer
             val tvPrediction: TextView = findViewById(R.id.tv_prediction)
-            tvPrediction.text = "hi"
+            tvPrediction.text = outputFeature0.toString()
 
             model.close()
         }
@@ -96,7 +99,8 @@ class ChooseUploadActivity : AppCompatActivity() {
         val ivFile: ImageView = findViewById(R.id.iv_file)
         if(requestCode==100 && resultCode == Activity.RESULT_OK && data != null){
             var filepath: Uri = data.data!!
-            bitmap = MediaStore.Images.Media.getBitmap(contentResolver, filepath)
+            val bitmap1: Bitmap = MediaStore.Images.Media.getBitmap(contentResolver, filepath)
+            bitmap = Bitmap.createScaledBitmap(bitmap1, 192, 256, true)
         }else if(requestCode==110 && resultCode == Activity.RESULT_OK){
             bitmap = data?.extras?.get("data") as Bitmap
         }
