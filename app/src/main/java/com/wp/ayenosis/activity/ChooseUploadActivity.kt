@@ -51,8 +51,8 @@ class ChooseUploadActivity : AppCompatActivity() {
 
         val btnSubmit: Button = findViewById(R.id.btn_submit1)
         btnSubmit.setOnClickListener{
-
-            val bitmapScaled = Bitmap.createScaledBitmap(bitmap, 192, 256, true)
+        /*
+        val bitmapScaled = Bitmap.createScaledBitmap(bitmap, 192, 256, true)
             val byteBuffer = ByteBuffer.allocateDirect(4 * 3 * 192 * 256)
             for (y in 0 until 256) {
                 for (x in 0 until 192) {
@@ -76,17 +76,16 @@ class ChooseUploadActivity : AppCompatActivity() {
             TensorImage.fromBitmap(bitmapScaled)
             val model = Model1.newInstance(this)
 
-            // Creates inputs for reference.
             val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 192, 256, 3),DataType.FLOAT32)
             inputFeature0.loadBuffer(byteBuffer)
 
-            // Runs model inference and gets result.
             val outputs = model.process(inputFeature0)
             val outputFeature0 = outputs.outputFeature0AsTensorBuffer
             val tvPrediction: TextView = findViewById(R.id.tv_prediction)
-            tvPrediction.text = outputFeature0.toString()
+            tvPrediction.text = "tempat taro tes"
 
             model.close()
+            */
         }
 
     }

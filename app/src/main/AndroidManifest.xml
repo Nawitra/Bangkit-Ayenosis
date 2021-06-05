@@ -13,6 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ayenosis"
         android:usesCleartextTraffic="true">
+        <activity android:name=".activity.FaqActivity"></activity>
         <activity android:name=".activity.ChooseUploadActivity" />
         <activity
             android:name=".activity.OnboardingActivity"
@@ -21,6 +22,7 @@
         <activity android:name=".activity.SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

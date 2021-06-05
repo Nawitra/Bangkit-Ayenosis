@@ -3,15 +3,14 @@
     <item
         android:id="@+id/btn_history"
         android:title="History"
-        android:icon="@drawable/button_history"></item>
-
+        android:icon="@drawable/button_history"/>
     <item
         android:id="@+id/btn_home"
         android:title="Home"
-        android:icon="@drawable/button_home"></item>
+        android:icon="@drawable/button_home"/>
 
     <item
         android:id="@+id/btn_question"
         android:title="FAQ"
-        android:icon="@drawable/button_question"></item>
+        android:icon="@drawable/button_question"/>
 </menu>
