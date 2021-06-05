@@ -15,13 +15,19 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.wp.ayenosis.R
 import com.wp.ayenosis.ml.Model1
+import com.wp.ayenosis.model.Detection
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
+import java.time.LocalDateTime
+
 
 class ChooseUploadActivity : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_upload)
@@ -51,6 +57,17 @@ class ChooseUploadActivity : AppCompatActivity() {
 
         val btnSubmit: Button = findViewById(R.id.btn_submit1)
         btnSubmit.setOnClickListener{
+            var normalP: Float = 0.17F
+            var cataractP: Float = 0.83F
+            val dateTime = LocalDateTime.now()
+
+            val detection = Detection()
+            detection.normalPercent = normalP
+            detection.cataractPercent = cataractP
+            detection.timeDate = dateTime
+
+            intentToResult(detection)
+
         /*
         val bitmapScaled = Bitmap.createScaledBitmap(bitmap, 192, 256, true)
             val byteBuffer = ByteBuffer.allocateDirect(4 * 3 * 192 * 256)
@@ -88,6 +105,12 @@ class ChooseUploadActivity : AppCompatActivity() {
             */
         }
 
+    }
+
+    private fun intentToResult(data: Detection) {
+        val intent = Intent(this, ShowResultActivity::class.java)
+        intent.putExtra("DetectionKey", data)
+        startActivity(intent)
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

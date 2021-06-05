@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Ayenosis"
         android:usesCleartextTraffic="true">
-        <activity android:name=".activity.FaqActivity"></activity>
+        <activity android:name=".activity.ShowResultActivity"></activity>
+        <activity android:name=".activity.FaqActivity" />
         <activity android:name=".activity.ChooseUploadActivity" />
         <activity
             android:name=".activity.OnboardingActivity"
