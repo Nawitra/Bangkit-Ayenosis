@@ -27,6 +27,7 @@
         app:itemIconTint="@color/white"
         app:itemIconSize="30sp"
         android:layout_alignParentBottom="true"
-        app:menu="@menu/menu_bar" />
+        app:menu="@menu/menu_bar"
+        android:id="@+id/menu_navigation1"/>
 
 </RelativeLayout>
