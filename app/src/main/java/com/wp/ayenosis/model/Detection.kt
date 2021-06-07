@@ -9,6 +9,6 @@ import java.util.*
 data class Detection(
     var normalPercent: Float? = null,
     var cataractPercent: Float? = null,
-    var timeDate: LocalDateTime? = null
+    var timeDate: String? = null
 
 ): Parcelable

@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_marginBottom="5dp"
             android:textStyle="bold"
-            android:textSize="18dp"
+            android:textSize="18sp"
             android:textColor="@color/blue_chosen"
             tools:text = "No. Pertanyaan?"/>
 

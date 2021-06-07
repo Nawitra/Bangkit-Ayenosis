@@ -1,5 +1,6 @@
 package com.wp.ayenosis.activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
@@ -15,7 +16,7 @@ class ShowResultActivity : AppCompatActivity() {
 
         supportActionBar?.hide()
 
-        var det = intent.getParcelableExtra<Detection>("DetectionKey") as Detection
+        val det = intent.getParcelableExtra<Detection>("DetectionKey") as Detection
 
         val tvNormal: TextView = findViewById(R.id.tv_normal)
         val tvCataract: TextView = findViewById(R.id.tv_cataract)
@@ -24,6 +25,11 @@ class ShowResultActivity : AppCompatActivity() {
         tvCataract.text = det.cataractPercent.toString()
 
         val btnOkay: Button = findViewById(R.id.btn_okay)
+        btnOkay.setOnClickListener{
+            val mIntent = Intent(this@ShowResultActivity, MainActivity::class.java)
+            startActivity(mIntent)
+            finish()
+        }
 
     }
 }

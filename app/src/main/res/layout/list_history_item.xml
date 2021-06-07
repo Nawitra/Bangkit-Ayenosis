@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:padding="15dp"
+    android:orientation="vertical"
+    android:background="@drawable/layout_bg_item">
+
+    <TextView
+        android:id="@+id/tv_date_history"
+        android:textColor="@color/white"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="5dp"
+        android:layout_gravity="right"
+        android:text="Monday, 7 June, 2021"/>
+
+        <TextView
+            android:id="@+id/tv_normal_history"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:text="Normal: 80%"/>
+
+        <TextView
+            android:id="@+id/tv_cataract_history"
+            android:textColor="@color/white"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="5dp"
+            android:text="Cataract: 80%"/>
+
+</LinearLayout>

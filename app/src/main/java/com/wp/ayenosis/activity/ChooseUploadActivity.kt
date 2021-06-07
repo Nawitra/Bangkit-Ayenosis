@@ -29,6 +29,8 @@ import java.time.LocalDateTime
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.ktx.Firebase
 import com.wp.ayenosis.utils.FirebaseUtils.firebaseAuth
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 class ChooseUploadActivity : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
@@ -70,11 +72,15 @@ class ChooseUploadActivity : AppCompatActivity() {
             val detection = Detection()
             detection.normalPercent = normalP
             detection.cataractPercent = cataractP
-            detection.timeDate = dateTime
+
+
+            var formattedDate = dateTime.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL));
+            detection.timeDate = formattedDate;
 
             val data = hashMapOf(
                 "normal" to detection.normalPercent,
-                "cataract" to detection.cataractPercent
+                "cataract" to detection.cataractPercent,
+                "date" to detection.timeDate
             )
 
             val db = FirebaseFirestore.getInstance()
@@ -83,8 +89,6 @@ class ChooseUploadActivity : AppCompatActivity() {
             if (user != null) {
                 uid = user.uid
             }
-
-
 
             db.collection("userData").document(uid).collection("detection")
                 .add(data)
