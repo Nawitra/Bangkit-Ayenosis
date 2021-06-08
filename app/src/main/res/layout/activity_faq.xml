@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_below="@+id/tlb_faq"
+        android:layout_above="@id/menu_navigation1"
         tools:listitem="@layout/list_question_item">
     </androidx.recyclerview.widget.RecyclerView>
 

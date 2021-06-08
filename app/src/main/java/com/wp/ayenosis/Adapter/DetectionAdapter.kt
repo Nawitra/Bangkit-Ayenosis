@@ -1,5 +1,6 @@
 package com.wp.ayenosis.Adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -28,11 +29,12 @@ class DetectionAdapter(options: FirestoreRecyclerOptions<Detection>) :
         ))
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: DetectionAdapterView, position: Int, model: Detection) {
-        //val normalPercent = model.normalPercent?.times(100)
-        //val cataractPercent = model.cataractPercent?.times(100)
-        holder.tvNormalHistory.text = model.normalPercent.toString()
-        holder.tvCataractHistory.text = model.cataractPercent.toString()
+        val cataractPercent =  String.format("%.3f", model.cataractPercent!! *100)
+        val normalPercent = String.format("%.3f", model.normalPercent!! *100)
+        holder.tvNormalHistory.text = "Normal   : $normalPercent%"
+        holder.tvCataractHistory.text = "Cataract : $cataractPercent%"
     }
 
 }

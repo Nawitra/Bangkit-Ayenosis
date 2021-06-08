@@ -33,55 +33,39 @@
             android:id="@+id/tv_normal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
             android:layout_marginTop="12dp"
             android:textColor="@color/blue_chosen"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.064"
-            app:layout_constraintStart_toEndOf="@+id/tv_cataract_text"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_cataract"
             tools:text="20%" />
-
-        <TextView
-            android:id="@+id/tv_normal_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="48dp"
-            android:text="Normal"
-            android:textColor="@color/blue_chosen"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.224"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
 
         <TextView
             android:id="@+id/tv_cataract"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="44dp"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="32dp"
             android:textColor="@color/blue_chosen"
             android:textSize="30sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.09"
-            app:layout_constraintStart_toEndOf="@+id/tv_normal_text"
+            app:layout_constraintHorizontal_bias="0.501"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView"
             tools:text="20%" />
 
         <TextView
-            android:id="@+id/tv_cataract_text"
+            android:id="@+id/tv_diagnose"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="Cataract"
+            android:layout_marginStart="24dp"
+            android:text="We have detected that your eye "
             android:textColor="@color/blue_chosen"
-            android:textSize="30sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.237"
+            app:layout_constraintBottom_toTopOf="@+id/btn_okay"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_normal_text" />
+            app:layout_constraintTop_toBottomOf="@+id/tv_normal"
+            app:layout_constraintVertical_bias="0.112"/>
 
         <Button
             android:id="@+id/btn_okay"
