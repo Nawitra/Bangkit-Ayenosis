@@ -1,7 +1,10 @@
 package com.wp.ayenosis.model
 
 import android.os.Parcelable
+import com.google.firebase.firestore.FieldValue
+import com.google.firebase.firestore.ServerTimestamp
 import kotlinx.android.parcel.Parcelize
+import java.sql.Timestamp
 import java.time.LocalDateTime
 import java.util.*
 

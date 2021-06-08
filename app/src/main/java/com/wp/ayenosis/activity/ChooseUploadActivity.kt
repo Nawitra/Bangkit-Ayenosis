@@ -2,6 +2,7 @@
 
 package com.wp.ayenosis.activity
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.ContentValues.TAG
 import android.content.Intent
@@ -16,26 +17,25 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.auth.User
+import com.google.firebase.firestore.*
 import com.wp.ayenosis.R
-import com.wp.ayenosis.ml.ConvertedModel
+import com.wp.ayenosis.ml.ConvertedModel1
+import com.wp.ayenosis.ml.ConvertedModelSemogauint
 import com.wp.ayenosis.model.Detection
+import java.time.LocalDateTime
+import com.wp.ayenosis.utils.FirebaseUtils.firebaseAuth
 import org.tensorflow.lite.DataType
 import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
-import java.time.LocalDateTime
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.ktx.Firebase
-import com.wp.ayenosis.utils.FirebaseUtils.firebaseAuth
-import java.time.format.DateTimeFormatter
-import java.time.format.FormatStyle
+import java.nio.ByteOrder
 
 class ChooseUploadActivity : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
     private lateinit var uid: String
+    private var arrayListDetection: MutableList<Detection> = arrayListOf()
 
+    @SuppressLint("SimpleDateFormat")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_choose_upload)
@@ -73,16 +73,11 @@ class ChooseUploadActivity : AppCompatActivity() {
             detection.normalPercent = normalP
             detection.cataractPercent = cataractP
 
-
-            var formattedDate = dateTime.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.FULL));
-            detection.timeDate = formattedDate;
-
             val data = hashMapOf(
                 "normal" to detection.normalPercent,
                 "cataract" to detection.cataractPercent,
                 "date" to detection.timeDate
             )
-
             val db = FirebaseFirestore.getInstance()
 
             val user = firebaseAuth.currentUser
@@ -99,11 +94,42 @@ class ChooseUploadActivity : AppCompatActivity() {
                     Toast.makeText(this, "Fail", Toast.LENGTH_SHORT).show()
                 }
 
-            intentToResult(detection)
+            //intentToResult(detection)
 
-/*
+ /*           db.collection("userData").document(uid).collection("detection")
+                .addSnapshotListener(object: EventListener<QuerySnapshot>{
+                    override fun onEvent(
+                        value: QuerySnapshot?,
+                        error: FirebaseFirestoreException?
+                    ) {
+                        for(dc: DocumentChange in value?.documentChanges!!){
+                            if(dc.type == DocumentChange.Type.ADDED){
+                                arrayListDetection.add(dc.document.toObject(Detection::class.java))
+                            }
+                        }
+                    }
+               })*/
+
         val bitmapScaled = Bitmap.createScaledBitmap(bitmap, 256, 192, true)
-            val byteBuffer = ByteBuffer.allocateDirect(4 * 3 * 192 * 256)
+            val byteBuffer = ByteBuffer.allocateDirect(3*4*192*256)
+            byteBuffer.order(ByteOrder.nativeOrder())
+            val pixels = IntArray(256 * 192)
+            bitmapScaled.getPixels(pixels, 0, bitmapScaled.width, 0, 0, bitmapScaled.width, bitmapScaled.height)
+            var pixel = 0
+
+            for (i in 0 until 256) {
+                for (j in 0 until 192) {
+                    val pixelVal = pixels[pixel++]
+
+                    byteBuffer.putFloat(((pixelVal shr 16 and 0xFF)) / 255f)
+                    byteBuffer.putFloat(((pixelVal shr 8 and 0xFF) ) / 255f)
+                    byteBuffer.putFloat(((pixelVal and 0xFF) ) / 255f)
+
+                }
+            }
+            bitmap.recycle()
+
+            /*
             for (y in 0 until 192) {
                 for (x in 0 until 256) {
                     val px = bitmapScaled.getPixel(x, y)
@@ -116,26 +142,40 @@ class ChooseUploadActivity : AppCompatActivity() {
                     val gf = (g) / 255f
                     val bf = (b) / 255f
 
-                    byteBuffer.putFloat(rf)
-                    byteBuffer.putFloat(gf)
-                    byteBuffer.putFloat(bf)
+                   byteBuffer.putFloat(rf)
+                   byteBuffer.putFloat(gf)
+                   byteBuffer.putFloat(bf)
+
+                   // byteBuffer.putInt(px)
                 }
             }
+            */
 
-            val tensorImage = TensorImage(DataType.FLOAT32)
-            TensorImage.fromBitmap(bitmapScaled)
-            val model = ConvertedModel.newInstance(this)
+
+
+            //val tensorImage = TensorImage(DataType.UINT8)
+            //TensorImage.fromBitmap(bitmapScaled)
+            val model = ConvertedModel1.newInstance(this)
+            //var buffer1 = TensorImage.fromBitmap(bitmapScaled)
+            //byteBuffer = buffer1.buffer
+            //val image1 = TensorImage.fromBitmap(bitmap)
 
             val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 192, 256, 3), DataType.FLOAT32)
             inputFeature0.loadBuffer(byteBuffer)
 
             val outputs = model.process(inputFeature0)
             val outputFeature0 = outputs.outputFeature0AsTensorBuffer
+
             val tvPrediction: TextView = findViewById(R.id.tv_prediction)
-            tvPrediction.text = outputFeature0.floatArray[0].toString()
+            val tvPrediction1: TextView = findViewById(R.id.tv_prediction1)
+            val tvPrediction2: TextView = findViewById(R.id.tv_prediction2)
+            tvPrediction.text = outputFeature0.floatArray.toString()
+            tvPrediction1.text = outputFeature0.floatArray[0].toString()
+            tvPrediction2.text = outputFeature0.floatArray[1].toString()
+
 
             model.close()
-*/
+
         }
 
     }

@@ -44,13 +44,14 @@ class FaqActivity : AppCompatActivity() {
                     val mIntent = Intent(this@FaqActivity, MainActivity::class.java)
                     startActivity(mIntent)
                     finish()
-                    //Toast.makeText(this, "You are already in the HOME SCREEN", Toast.LENGTH_SHORT).show()
                 }
                 R.id.btn_question -> {
                     Toast.makeText(this, "You are already in the FAQ SCREEN", Toast.LENGTH_SHORT).show()
                 }
                 R.id.btn_history -> {
-                    Toast.makeText(this, "History", Toast.LENGTH_SHORT).show()
+                    val mIntent = Intent(this@FaqActivity, HistoryActivity::class.java)
+                    startActivity(mIntent)
+                    finish()
                 }
             }
             true}

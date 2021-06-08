@@ -46,7 +46,9 @@ class MainActivity : AppCompatActivity() {
                         finish()
                     }
                     R.id.btn_history -> {
-                        Toast.makeText(this, "History", Toast.LENGTH_SHORT).show()
+                        val mIntent = Intent(this@MainActivity, HistoryActivity::class.java)
+                        startActivity(mIntent)
+                        finish()
                     }
                 }
                 true}
