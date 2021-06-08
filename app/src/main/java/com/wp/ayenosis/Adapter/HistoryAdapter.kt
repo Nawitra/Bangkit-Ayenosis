@@ -35,7 +35,7 @@ class HistoryAdapter (private val detectionItem: MutableList<Detection>) : Recyc
         val cataractPercent = detection.cataractPercent?.times(100)
         holder.tvNormalHistory.text = "Normal $normalPercent%"
         holder.tvCataractHistory.text = "Normal $cataractPercent%"
-        holder.tvDateHistory.text = detection.timeDate
+        //holder.tvDateHistory.text = detection.date.toString()
     }
 
     override fun getItemCount() = detectionItem.size

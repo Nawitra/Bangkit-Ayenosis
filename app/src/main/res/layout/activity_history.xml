@@ -16,7 +16,8 @@
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:layout_below="@+id/tlb_history"
-        tools:listitem="@layout/list_history_item">
+        tools:listitem="@layout/list_history_item"
+        android:layout_above="@+id/menu_navigation_history">
     </androidx.recyclerview.widget.RecyclerView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

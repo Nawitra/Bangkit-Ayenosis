@@ -65,36 +65,9 @@ class ChooseUploadActivity : AppCompatActivity() {
 
         val btnSubmit: Button = findViewById(R.id.btn_submit1)
         btnSubmit.setOnClickListener{
-            val normalP: Float = 0.17F
-            val cataractP: Float = 0.83F
-            val dateTime = LocalDateTime.now()
 
-            val detection = Detection()
-            detection.normalPercent = normalP
-            detection.cataractPercent = cataractP
 
-            val data = hashMapOf(
-                "normal" to detection.normalPercent,
-                "cataract" to detection.cataractPercent,
-                "date" to detection.timeDate
-            )
-            val db = FirebaseFirestore.getInstance()
 
-            val user = firebaseAuth.currentUser
-            if (user != null) {
-                uid = user.uid
-            }
-
-            db.collection("userData").document(uid).collection("detection")
-                .add(data)
-                .addOnSuccessListener {
-                    Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
-                }
-                .addOnFailureListener { e ->
-                    Toast.makeText(this, "Fail", Toast.LENGTH_SHORT).show()
-                }
-
-            //intentToResult(detection)
 
  /*           db.collection("userData").document(uid).collection("detection")
                 .addSnapshotListener(object: EventListener<QuerySnapshot>{
@@ -129,36 +102,9 @@ class ChooseUploadActivity : AppCompatActivity() {
             }
             bitmap.recycle()
 
-            /*
-            for (y in 0 until 192) {
-                for (x in 0 until 256) {
-                    val px = bitmapScaled.getPixel(x, y)
 
-                    val r = Color.red(px)
-                    val g = Color.green(px)
-                    val b = Color.blue(px)
-
-                    val rf = (r) / 255f
-                    val gf = (g) / 255f
-                    val bf = (b) / 255f
-
-                   byteBuffer.putFloat(rf)
-                   byteBuffer.putFloat(gf)
-                   byteBuffer.putFloat(bf)
-
-                   // byteBuffer.putInt(px)
-                }
-            }
-            */
-
-
-
-            //val tensorImage = TensorImage(DataType.UINT8)
-            //TensorImage.fromBitmap(bitmapScaled)
             val model = ConvertedModel1.newInstance(this)
-            //var buffer1 = TensorImage.fromBitmap(bitmapScaled)
-            //byteBuffer = buffer1.buffer
-            //val image1 = TensorImage.fromBitmap(bitmap)
+
 
             val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 192, 256, 3), DataType.FLOAT32)
             inputFeature0.loadBuffer(byteBuffer)
@@ -176,6 +122,32 @@ class ChooseUploadActivity : AppCompatActivity() {
 
             model.close()
 
+            val detection = Detection()
+            detection.normalPercent = outputFeature0.floatArray[0]
+            detection.cataractPercent = outputFeature0.floatArray[1]
+
+
+            val data = hashMapOf(
+                "normalPercent" to detection.normalPercent,
+                "cataractPercent" to detection.cataractPercent,
+                "timedate" to FieldValue.serverTimestamp()
+            )
+            val db = FirebaseFirestore.getInstance()
+
+            val user = firebaseAuth.currentUser
+            if (user != null) {
+                uid = user.uid
+            }
+
+            db.collection("userData").document(uid).collection("detection")
+                .add(data)
+                .addOnSuccessListener {
+                    Toast.makeText(this, "Success", Toast.LENGTH_SHORT).show()
+                }
+                .addOnFailureListener { e ->
+                    Toast.makeText(this, "Fail", Toast.LENGTH_SHORT).show()
+                }
+            intentToResult(detection)
         }
 
     }

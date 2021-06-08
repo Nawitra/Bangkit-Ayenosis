@@ -11,7 +11,6 @@ import java.util.*
 @Parcelize
 data class Detection(
     var normalPercent: Float? = null,
-    var cataractPercent: Float? = null,
-    var timeDate: String? = null
+    var cataractPercent: Float? = null
 
 ): Parcelable
