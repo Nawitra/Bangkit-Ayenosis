@@ -56,16 +56,20 @@
             tools:text="20%" />
 
         <TextView
-            android:id="@+id/tv_diagnose"
+            android:id="@+id/tv_detect"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="24dp"
-            android:text="We have detected that your eye "
+            android:justificationMode="inter_word"
+            android:paddingHorizontal="40dp"
+            android:text="Based on what we have detected, your eye might not have cataract. Although, it is advisable to check up to your local doctor in case you feel that this is not the case "
             android:textColor="@color/blue_chosen"
+            android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/btn_okay"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_normal"
-            app:layout_constraintVertical_bias="0.112"/>
+            app:layout_constraintVertical_bias="0.234" />
 
         <Button
             android:id="@+id/btn_okay"

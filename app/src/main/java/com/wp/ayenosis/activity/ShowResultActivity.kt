@@ -25,8 +25,15 @@ class ShowResultActivity : AppCompatActivity() {
 
         val cataractPercent =  String.format("%.3f", det.cataractPercent!! *100)
         val normalPercent = String.format("%.3f", det.normalPercent!! *100)
-        tvNormal.text = "Normal  : $cataractPercent%"
-        tvCataract.text = "Cataract: $normalPercent%"
+        tvNormal.text = "Normal  : $normalPercent%"
+        tvCataract.text = "Cataract: $cataractPercent%"
+
+        val tvDetect: TextView = findViewById(R.id.tv_detect)
+        if(det.cataractPercent!! > 0.5){
+            tvDetect.text = "We have detected that your eye might have cataract. As such, we highly encourage you to get a further diagnosis from the hospital."
+        }else{
+            tvDetect.text = "Based on what we have detected, your eye might not have cataract. Although, it is advisable to check up to your local doctor in case you feel that this is not the case."
+        }
 
         val btnOkay: Button = findViewById(R.id.btn_okay)
         btnOkay.setOnClickListener{

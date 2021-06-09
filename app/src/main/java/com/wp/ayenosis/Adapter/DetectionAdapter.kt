@@ -35,6 +35,7 @@ class DetectionAdapter(options: FirestoreRecyclerOptions<Detection>) :
         val normalPercent = String.format("%.3f", model.normalPercent!! *100)
         holder.tvNormalHistory.text = "Normal   : $normalPercent%"
         holder.tvCataractHistory.text = "Cataract : $cataractPercent%"
+        holder.tvDateHistory.text = model.date
     }
 
 }

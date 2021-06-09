@@ -14,13 +14,9 @@ import com.google.firebase.firestore.CollectionReference
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.wp.ayenosis.Adapter.DetectionAdapter
-import com.wp.ayenosis.Adapter.HistoryAdapter
-import com.wp.ayenosis.Adapter.QuestionAnswerAdapter
 import com.wp.ayenosis.R
 import com.wp.ayenosis.model.Detection
-import com.wp.ayenosis.model.QuestionAnswer
 import com.wp.ayenosis.utils.FirebaseUtils
-import com.wp.ayenosis.utils.FirebaseUtils.firebaseUser
 
 class HistoryActivity : AppCompatActivity() {
     private val db: FirebaseFirestore = FirebaseFirestore.getInstance()
@@ -82,7 +78,7 @@ class HistoryActivity : AppCompatActivity() {
         //val historyAdapter = HistoryAdapter(arrayListDetection)
         //rvHistory.adapter = historyAdapter
 
-        val query: Query = collectionRecyclerView
+        val query: Query = collectionRecyclerView.orderBy("timedate", Query.Direction.DESCENDING)
         val firestoreRecyclerOptions: FirestoreRecyclerOptions<Detection> = FirestoreRecyclerOptions.Builder<Detection>()
             .setQuery(query, Detection::class.java)
             .build()

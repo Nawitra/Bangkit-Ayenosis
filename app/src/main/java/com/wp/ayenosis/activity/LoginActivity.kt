@@ -4,10 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.google.firebase.auth.FirebaseUser
-import com.wp.ayenosis.R
 import com.wp.ayenosis.databinding.ActivityLoginBinding
-import com.wp.ayenosis.utils.FirebaseUtils
 import com.wp.ayenosis.utils.FirebaseUtils.firebaseAuth
 import com.wp.ayenosis.utils.FirebaseUtils.firebaseUser
 

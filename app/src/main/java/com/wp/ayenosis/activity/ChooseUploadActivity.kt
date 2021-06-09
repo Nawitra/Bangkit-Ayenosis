@@ -4,37 +4,32 @@ package com.wp.ayenosis.activity
 
 import android.annotation.SuppressLint
 import android.app.Activity
-import android.content.ContentValues.TAG
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.Color
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.firebase.database.ServerValue
 import com.google.firebase.firestore.*
 import com.wp.ayenosis.R
 import com.wp.ayenosis.ml.ConvertedModel1
-import com.wp.ayenosis.ml.ConvertedModelSemogauint
 import com.wp.ayenosis.model.Detection
 import java.time.LocalDateTime
 import com.wp.ayenosis.utils.FirebaseUtils.firebaseAuth
 import org.tensorflow.lite.DataType
-import org.tensorflow.lite.support.image.TensorImage
 import org.tensorflow.lite.support.tensorbuffer.TensorBuffer
 import java.nio.ByteBuffer
 import java.nio.ByteOrder
+import java.time.format.DateTimeFormatter
+import java.time.format.FormatStyle
 
 class ChooseUploadActivity : AppCompatActivity() {
     private lateinit var bitmap: Bitmap
     private lateinit var uid: String
-    private var arrayListDetection: MutableList<Detection> = arrayListOf()
 
     @SuppressLint("SimpleDateFormat")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -67,45 +62,28 @@ class ChooseUploadActivity : AppCompatActivity() {
         val btnSubmit: Button = findViewById(R.id.btn_submit1)
         btnSubmit.setOnClickListener{
 
-
-
-
- /*           db.collection("userData").document(uid).collection("detection")
-                .addSnapshotListener(object: EventListener<QuerySnapshot>{
-                    override fun onEvent(
-                        value: QuerySnapshot?,
-                        error: FirebaseFirestoreException?
-                    ) {
-                        for(dc: DocumentChange in value?.documentChanges!!){
-                            if(dc.type == DocumentChange.Type.ADDED){
-                                arrayListDetection.add(dc.document.toObject(Detection::class.java))
-                            }
-                        }
-                    }
-               })*/
-
         val bitmapScaled = Bitmap.createScaledBitmap(bitmap, 256, 192, true)
-            val byteBuffer = ByteBuffer.allocateDirect(3*4*192*256)
-            byteBuffer.order(ByteOrder.nativeOrder())
+
             val pixels = IntArray(256 * 192)
             bitmapScaled.getPixels(pixels, 0, bitmapScaled.width, 0, 0, bitmapScaled.width, bitmapScaled.height)
             var pixel = 0
 
-            for (i in 0 until 256) {
-                for (j in 0 until 192) {
-                    val pixelVal = pixels[pixel++]
+            val byteBuffer = ByteBuffer.allocateDirect(3*4*192*256)
+            byteBuffer.order(ByteOrder.nativeOrder())
 
-                    byteBuffer.putFloat(((pixelVal shr 16 and 0xFF)) / 255f)
-                    byteBuffer.putFloat(((pixelVal shr 8 and 0xFF) ) / 255f)
-                    byteBuffer.putFloat(((pixelVal and 0xFF) ) / 255f)
+            for (y in 0 until 256) {
+                for (x in 0 until 192) {
+                    val valuePixel = pixels[pixel++]
+
+                    byteBuffer.putFloat(((valuePixel shr 16 and 0xFF)) / 255f)
+                    byteBuffer.putFloat(((valuePixel shr 8 and 0xFF) ) / 255f)
+                    byteBuffer.putFloat(((valuePixel and 0xFF) ) / 255f)
 
                 }
             }
             bitmap.recycle()
 
-
             val model = ConvertedModel1.newInstance(this)
-
 
             val inputFeature0 = TensorBuffer.createFixedSize(intArrayOf(1, 192, 256, 3), DataType.FLOAT32)
             inputFeature0.loadBuffer(byteBuffer)
@@ -113,25 +91,20 @@ class ChooseUploadActivity : AppCompatActivity() {
             val outputs = model.process(inputFeature0)
             val outputFeature0 = outputs.outputFeature0AsTensorBuffer
 
-            val tvPrediction: TextView = findViewById(R.id.tv_prediction)
-            val tvPrediction1: TextView = findViewById(R.id.tv_prediction1)
-            val tvPrediction2: TextView = findViewById(R.id.tv_prediction2)
-            tvPrediction.text = outputFeature0.floatArray.toString()
-            tvPrediction1.text = outputFeature0.floatArray[0].toString()
-            tvPrediction2.text = outputFeature0.floatArray[1].toString()
-
-
             model.close()
 
             val detection = Detection()
             detection.normalPercent = outputFeature0.floatArray[0]
             detection.cataractPercent = outputFeature0.floatArray[1]
-
+            val currentDateTime = LocalDateTime.now()
+            detection.date = currentDateTime.format(DateTimeFormatter.ofLocalizedDateTime(
+                FormatStyle.FULL, FormatStyle.MEDIUM))
 
             val data = hashMapOf(
                 "normalPercent" to detection.normalPercent,
                 "cataractPercent" to detection.cataractPercent,
-                "timedate" to FieldValue.serverTimestamp()
+                "timedate" to FieldValue.serverTimestamp(),
+                "date" to detection.date
             )
             val db = FirebaseFirestore.getInstance()
 
@@ -158,6 +131,7 @@ class ChooseUploadActivity : AppCompatActivity() {
         val intent = Intent(this, ShowResultActivity::class.java)
         intent.putExtra("DetectionKey", data)
         startActivity(intent)
+        finish()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

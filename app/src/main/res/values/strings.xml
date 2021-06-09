@@ -47,25 +47,23 @@
         <item>6. How much does the Ayenosis lens cost?</item>
         <item>7. Can we only use Ayenosis to diagnose?</item>
         <item>8. Is it scientifically based?</item>
-        <item>tes</item>
     </string-array>
 
     <string-array name="answer">
-        <item>Ayenosis is an Android Application that can help in the early prediction of several diseases that can be seen through the retina of the eye, one of the diseases that can be checked is cataract​
+        <item>Ayenosis is an Android Application that can help in the early prediction of several diseases that can be seen through the retina of the eye. One of the diseases that can be checked is cataract​
 </item>
-        <item>In the initial deployment, Ayenosis will only focus on one disease which is Cataract.
-        However, we will expand more to detect more diseases like glaucoma, diabetes, pathological myopia, etc.</item>
+        <item>In the initial deployment, Ayenosis will only focus on the detection of one disease which is Cataract.
+        However, later on, we are planning to include more diseases, such as Glaucoma, Diabetes, Pathological Myopia, etc.</item>
         <item>- Login to your account or Register\n
-            - Snap a picture or upload image file of a retina picture taken by mobile camera and 3D printed external tools\n
-        - Get the result while our machine learning process the image\n
-        - The result will be automatically saved and can be a reference when consulting with your doctor</item>
-        <item>For cataract, the test accuracy is about 90.96% and 85.5% for the validation accuracy</item>
-        <item>Yes, Ayenosis needs a 3D printed frame and combine it with a 20D lens to capture the retina. </item>
-        <item>Typically, fundus or retinal cameras can cost between $1,000 – $30,000. However, we‘ll use an open-source 3D printed frame and combine it with a 20D lens, and the total cost is less than $200</item>
+            - Snap a picture or upload an image file of a retina picture taken by mobile camera and 3D printed external tools\n
+        - Get the result after our machine learning has finished processing the image\n
+        - The result will be automatically saved and can be used as a reference when consulting with your doctor</item>
+        <item>For cataract, the test accuracy is about 90.96%, while the validation accuracy is approximately 85.5%</item>
+        <item>Yes, Ayenosis needs a 3D printed frame. It will be combined with a 20D lens to capture the retina. </item>
+        <item>Typically, fundus or retinal cameras can cost between $1,000 – $30,000. However, we‘ll use an open-source 3D printed frame and combine it with a 20D lens. As such, the total cost will be less than $200</item>
         <item>No, it is strongly prohibited to diagnose only with Ayenosis. Ayenosis is used to detect the diseases on the early stage.
-        Further check in the hospital needed.</item>
-        <item>Yes, it is. Ayenosis is made based on several studies, papers and journals.</item>
-        <item>tes</item>
+        Further diagnosis in the hospital is needed and highly encouraged.</item>
+        <item>Yes, it is. Ayenosis was made based on several studies, papers and journals.</item>
     </string-array>
 
 </resources>
