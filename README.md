@@ -12,7 +12,7 @@ Ayenosis is an Android Application that can help in the early prediction of seve
 * Firebase
 
 ## Sneak Peeks
-
+![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-39-29-670_com.wp.ayenosis.jpg)
 ### Getting Started
 
 ### Authentication
