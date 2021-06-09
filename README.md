@@ -33,6 +33,6 @@ Ayenosis is an Android Application that can help in the early prediction of seve
 ![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-43-31-762_com.wp.ayenosis.jpg)
 
 ### FAQ
-![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/2ss)
+![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/2ss.jpg)
 ![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-44-34-817_com.wp.ayenosis.jpg)
 ![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-44-37-315_com.wp.ayenosis.jpg)
