@@ -14,11 +14,25 @@ Ayenosis is an Android Application that can help in the early prediction of seve
 ## Sneak Peeks
 ![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-39-29-670_com.wp.ayenosis.jpg)
 ### Getting Started
+![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-39-34-080_com.wp.ayenosis.jpg)
+![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-39-36-261_com.wp.ayenosis.jpg)
+![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-39-38-441_com.wp.ayenosis.jpg)
 
 ### Authentication
+![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-51-44-862_com.wp.ayenosis.jpg)
+![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-51-47-383_com.wp.ayenosis.jpg)
 
 ### Dashboard
+![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-41-29-852_com.wp.ayenosis.jpg)
 
 ### Eye Detection
+![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/1ss.jpg)
+![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-42-42-224_com.wp.ayenosis.jpg)
 
 ### History
+![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-43-31-762_com.wp.ayenosis.jpg)
+
+### FAQ
+![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/2ss)
+![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-44-34-817_com.wp.ayenosis.jpg)
+![alt text](https://github.com/Nawitra/Bangkit-Ayenosis/blob/final-ayenosis/image_doc/Screenshot_2021-06-09-15-44-37-315_com.wp.ayenosis.jpg)
